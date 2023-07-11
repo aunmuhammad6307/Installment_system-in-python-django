@@ -1,0 +1,48 @@
+<div class="row">
+	<div class="col-md">
+		<div class="card card-body">
+			<table class="table table-sm">
+				<tr>
+					<th class="m-0 font-weight-bold text-primary">Product</th>
+					<th class="m-0 font-weight-bold text-primary">Description</th>
+					<th class="m-0 font-weight-bold text-primary">Original price</th>
+					<th class="m-0 font-weight-bold text-primary">Installment price</th>
+					<th class="m-0 font-weight-bold text-primary">Monthly installment</th>
+					<th class="m-0 font-weight-bold text-primary">Addvance price</th>
+					<th class="m-0 font-weight-bold text-primary">Date</th>
+				</tr>
+                {% for i in orders %}
+				    <tr>
+				        <td>{{i.product.name}}</td>
+					    <td>{{i.product.Description}}</td>
+					    <td>{{i.product.Original_price}}</td>
+					    <td>{{i.product.Installment_price}}</td>
+					    <td>{{i.product.addvance_price}}</td>
+					    <td>{{i.product.Monthly_installment}}</td>
+					    <td>{{i.product.date_created}}</td>
+				    </tr>
+				    <table class="table table-sm">
+				        <tr>
+					      <th class="m-0 font-weight-bold text-primary">Date</th>
+                          <th class="m-0 font-weight-bold text-primary">Month</th>
+					      <th class="m-0 font-weight-bold text-primary">Receipt ID</th>
+                          <th class="m-0 font-weight-bold text-primary">Price</th>
+                          <th class="m-0 font-weight-bold text-primary">Remaining amount</th>
+				        </tr>
+				        {% for j in receipt %}
+                            <tr>
+                                <td>{{j.date_created}}</td>
+                                <td>
+						        
+                                </td> 
+                                <td>{{j.id}}</td>
+                                <td>{{j.price}}</td>
+                                <td></td>
+                            </tr>
+				        {% endfor %}
+				</table>
+                {% endfor %}
+			</table>
+		</div>
+	</div>
+</div>

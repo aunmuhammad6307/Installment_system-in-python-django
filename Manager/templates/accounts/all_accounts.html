@@ -1,0 +1,28 @@
+{% extends 'accounts/base.html' %}
+{% block content %}
+<div class="row">
+	<div class="col-md-12">
+		<h1 class="h3 mb-0 text-gray-800">All accounts</h1>
+  <div class="row">
+    {% for i in customer %}
+      <div class="col-xl-3 col-sm-6 col-12">
+        <div class="card">
+          <div class="card-content">
+            <div class="card-body">
+              <div class="media d-flex">
+                <div class="media-body text-left">
+                  <h3 class="success">{{i.order_ID}}</h3>
+                  <span><a href="{% url 'customer_profile' i.customer.id %}">{{i.customer.name}}</a></span>
+                </div>
+                <div class="align-self-center">
+                  <i class="icon-user success font-large-2 float-right"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+    <hr>
+  </div>
+{% endblock content %}

@@ -1,0 +1,27 @@
+{% extends 'accounts/base.html' %}
+{% block content %}
+<div class="row">
+	<div class="col-md-12">
+		<h1 class="h3 mb-0 text-gray-800">Customer-list</h1>
+		<div class="card card-body">
+			<table class="table table-sm">
+				<tr>
+					<th class="m-0 font-weight-bold text-primary">ID</th>
+					<th class="m-0 font-weight-bold text-primary">Name</th>
+                    <th class="m-0 font-weight-bold text-primary">Father_name</th>
+                    <th class="m-0 font-weight-bold text-primary">Phone_number</th>
+                    <th class="m-0 font-weight-bold text-primary">Status</th>
+				</tr>
+                {% for i in customer_list %}
+				<tr>
+				    <td>{{i.customer.id}}</td>
+					<td>{{i.customer.name}}</td>
+					<td>{{i.customer.father_name}}</td>
+					<td>{{i.customer.phone}}</td>
+					<td><a href="#">{{i.status}}</a></td>
+				</td>
+				{% endfor %}
+			</table>
+		</div>
+	</div>
+{% endblock content %}
